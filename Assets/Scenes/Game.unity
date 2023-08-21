@@ -77285,7 +77285,7 @@ MonoBehaviour:
   Componentes:
   - {fileID: 3117}
   Pj: {fileID: 13058}
-  PEnMov: {fileID: 0}
+  PEnMov: {fileID: 12647}
   CamaraConduccion: {fileID: 3103}
   CamaraDescarga: {fileID: 3118}
   Pallet1: {fileID: 100000, guid: f221f0787bd1f4a47bc5caa6b4429fb7, type: 3}
@@ -77333,7 +77333,7 @@ MonoBehaviour:
   Componentes:
   - {fileID: 2683}
   Pj: {fileID: 27660010}
-  PEnMov: {fileID: 0}
+  PEnMov: {fileID: 12647}
   CamaraConduccion: {fileID: 3127}
   CamaraDescarga: {fileID: 2682}
   Pallet1: {fileID: 100000, guid: f221f0787bd1f4a47bc5caa6b4429fb7, type: 3}
@@ -77764,6 +77764,10 @@ PrefabInstance:
       value: Taxi
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -111.11435
       objectReference: {fileID: 0}
@@ -77803,6 +77807,10 @@ PrefabInstance:
     - target: {fileID: 100030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
       propertyPath: m_Name
       value: Taxi
+      objectReference: {fileID: 0}
+    - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -77846,6 +77854,10 @@ PrefabInstance:
       value: Taxi
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -25.671265
       objectReference: {fileID: 0}
@@ -77887,6 +77899,10 @@ PrefabInstance:
       value: Taxi
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 21.261246
       objectReference: {fileID: 0}
@@ -77926,6 +77942,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d805608cb151d9f40baf8fc5e4a8b2b7, type: 3}
       propertyPath: m_Name
       value: FinTaxi
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d805608cb151d9f40baf8fc5e4a8b2b7, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d805608cb151d9f40baf8fc5e4a8b2b7, type: 3}
       propertyPath: m_LocalScale.z
@@ -77977,6 +77997,10 @@ PrefabInstance:
       value: Taxi
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30.359535
       objectReference: {fileID: 0}
@@ -78018,6 +78042,10 @@ PrefabInstance:
       value: Taxi
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30.359535
       objectReference: {fileID: 0}
@@ -78057,6 +78085,10 @@ PrefabInstance:
     - target: {fileID: 100030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
       propertyPath: m_Name
       value: Taxi
+      objectReference: {fileID: 0}
+    - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
       propertyPath: m_LocalScale.x
@@ -78108,6 +78140,10 @@ PrefabInstance:
       value: Taxi
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 88.97879
       objectReference: {fileID: 0}
@@ -78149,6 +78185,10 @@ PrefabInstance:
       value: Taxi
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 121.206024
       objectReference: {fileID: 0}
@@ -78185,6 +78225,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3324}
     m_Modifications:
+    - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 111.19512
@@ -84211,6 +84255,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d805608cb151d9f40baf8fc5e4a8b2b7, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d805608cb151d9f40baf8fc5e4a8b2b7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30.937172
       objectReference: {fileID: 0}
@@ -84248,6 +84296,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d805608cb151d9f40baf8fc5e4a8b2b7, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d805608cb151d9f40baf8fc5e4a8b2b7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.479858
       objectReference: {fileID: 0}
@@ -84283,6 +84335,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d805608cb151d9f40baf8fc5e4a8b2b7, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d805608cb151d9f40baf8fc5e4a8b2b7, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d805608cb151d9f40baf8fc5e4a8b2b7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -84380,6 +84436,10 @@ PrefabInstance:
     - target: {fileID: 100030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
       propertyPath: m_TagString
       value: Obstaculo
+      objectReference: {fileID: 0}
+    - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: c3937ebfeadcea949aaccad482540ba5, type: 3}
       propertyPath: m_LocalPosition.x
