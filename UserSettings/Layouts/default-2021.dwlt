@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 124
+  controlID: 54
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 98
+  controlID: 108
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,8 +166,8 @@ MonoBehaviour:
     y: 0
     width: 246.40002
     height: 724
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -244,8 +244,8 @@ MonoBehaviour:
     y: 0
     width: 726
     height: 371.6
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -312,7 +312,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 32fbffff
+      m_ExpandedIDs: c0b5ffffb4d1ffffd0d2ffff32fbffff5a510000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -420,23 +420,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\facus\OneDrive\Escritorio\Moviles\TP1\Project_PorterCellphone_Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 447c0000
-    m_LastClickedID: 31812
-    m_ExpandedIDs: 000000003a7c00003c7c00003e7c0000427c0000827c000000ca9a3b
+    m_SelectedIDs: 967c0000
+    m_LastClickedID: 31894
+    m_ExpandedIDs: 00000000427c0000447c0000467c0000487c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -464,7 +464,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000003a7c00003c7c00003e7c0000407c0000427c0000447c0000
+    m_ExpandedIDs: 00000000427c0000447c0000467c0000487c00004a7c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -874,9 +874,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -8.633128, y: 8.004284, z: 5165.9565}
+    m_Target: {x: 1235.6362, y: 362.1004, z: 193.33705}
     speed: 2
-    m_Value: {x: -8.633128, y: 8.004284, z: 5165.9565}
+    m_Value: {x: 1235.6362, y: 362.1004, z: 193.33705}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -923,13 +923,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.46754587, y: 0.09039982, z: -0.048137635, w: -0.8780178}
+    m_Target: {x: -0.036284167, y: -0.030878212, z: 0.0011219225, w: -0.99886763}
     speed: 2
-    m_Value: {x: -0.46754503, y: 0.09039965, z: -0.04813755, w: -0.87801623}
+    m_Value: {x: -0.036284026, y: -0.030878091, z: 0.0011219181, w: -0.9988637}
   m_Size:
-    m_Target: 68.544624
+    m_Target: 988.41785
     speed: 2
-    m_Value: 68.544624
+    m_Value: 988.41785
   m_Ortho:
     m_Target: 0
     speed: 2
