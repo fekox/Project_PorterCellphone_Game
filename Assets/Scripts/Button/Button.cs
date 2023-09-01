@@ -10,6 +10,16 @@ public class Button : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void Credits() 
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void ReturnMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void ExitGame() 
     {
         Application.Quit();
