@@ -1,26 +1,18 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class MngPts : MonoBehaviour 
-{
-	Rect R = new Rect();
-	
+{	
 	public float TiempEmpAnims = 2.5f;
 	float Tempo = 0;
 	
-	public Vector2[] DineroPos;
-	public Vector2 DineroEsc;
-	public GUISkin GS_Dinero;
-	
-	public Vector2 GanadorPos;
-	public Vector2 GanadorEsc;
-	public Texture2D[] Ganadores;
-	public GUISkin GS_Ganador;
-	
-	public GameObject Fondo;
-	
-	public float TiempEspReiniciar = 10;
+	public GameObject[] Winers;
+	public TextMeshProUGUI[] Scores;
+
+    public float TiempEspReiniciar = 10;
 	
 	
 	public float TiempParpadeo = 0.7f;
@@ -33,38 +25,23 @@ public class MngPts : MonoBehaviour
 	
 	//---------------------------------//
 	
-	// Use this for initialization
 	void Start () 
-	{		
+	{
+		for (int i = 0; i < 2; i++) 
+		{
+            Winers[i].SetActive(false);
+		}
+
 		SetGanador();
 	}
 	
-	// Update is called once per frame
 	void Update () 
-	{
-		//PARA JUGAR
-		if(Input.GetKeyDown(KeyCode.Space) || 
-		   Input.GetKeyDown(KeyCode.Return) ||
-		   Input.GetKeyDown(KeyCode.Alpha0))
-		{
-			SceneManager.LoadScene(0);
-		}
-		
-		//CIERRA LA APLICACION
-		if(Input.GetKeyDown(KeyCode.Escape))
-		{
-			Application.Quit();
-		}		
-		
-		
+	{		
 		TiempEspReiniciar -= Time.deltaTime;
 		if(TiempEspReiniciar <= 0 )
 		{
 			SceneManager.LoadScene(0);
 		}
-		
-		
-		
 		
 		if(ActivadoAnims)
 		{
@@ -84,8 +61,6 @@ public class MngPts : MonoBehaviour
 			}
 		}
 		
-		
-		
 		if(!ActivadoAnims)
 		{
 			Tempo += Time.deltaTime;
@@ -95,37 +70,26 @@ public class MngPts : MonoBehaviour
 				ActivadoAnims = true;
 			}
 		}
-		
-		
-	}
-	
-	void OnGUI()
-	{
-		if(ActivadoAnims)
-		{
-			SetDinero();
-			SetCartelGanador();
-		}
-		
-		GUI.skin = null;
-	}
-	
-	//---------------------------------//
-	
+
+        if (ActivadoAnims)
+        {
+            SetDinero();
+        }
+    }
 	
 	void SetGanador()
 	{
 		switch(DatosPartida.LadoGanadaor)
 		{
-		case DatosPartida.Lados.Der:
+            case DatosPartida.Lados.Izq:
+
+            Winers[0].SetActive(true);
+
+            break;
+
+			case DatosPartida.Lados.Der:
 			
-			GS_Ganador.box.normal.background = Ganadores[1];
-			
-			break;
-			
-		case DatosPartida.Lados.Izq:
-			
-			GS_Ganador.box.normal.background = Ganadores[0];
+			Winers[1].SetActive(true);
 			
 			break;
 		}
@@ -133,56 +97,29 @@ public class MngPts : MonoBehaviour
 	
 	void SetDinero()
 	{
-		GUI.skin = GS_Dinero;
-		
-		R.width = DineroEsc.x * Screen.width/100;
-		R.height = DineroEsc.y * Screen.height/100;
-		
-		
-		
-		//IZQUIERDA
-		R.x = DineroPos[0].x * Screen.width/100;
-		R.y = DineroPos[0].y * Screen.height/100;
 		
 		if(DatosPartida.LadoGanadaor == DatosPartida.Lados.Izq)//izquierda
 		{
 			if(!PrimerImaParp)//para que parpadee
-				GUI.Box(R, "$" + Viz.PrepararNumeros(DatosPartida.PtsGanador));
+                Scores[0].text = "$" + Viz.PrepararNumeros(DatosPartida.PtsGanador).ToString();
 		}
 		else
 		{
-			GUI.Box(R, "$" + Viz.PrepararNumeros(DatosPartida.PtsPerdedor));
+            Scores[0].text = "$" + Viz.PrepararNumeros(DatosPartida.PtsPerdedor).ToString();
 		}
-		
-		
-		
-		//DERECHA
-		R.x = DineroPos[1].x * Screen.width/100;
-		R.y = DineroPos[1].y * Screen.height/100;
+				
 		
 		if(DatosPartida.LadoGanadaor == DatosPartida.Lados.Der)//derecha
 		{
 			if(!PrimerImaParp)//para que parpadee
-				GUI.Box(R, "$" + Viz.PrepararNumeros(DatosPartida.PtsGanador));
-		}
+                Scores[1].text = "$" + Viz.PrepararNumeros(DatosPartida.PtsGanador).ToString();
+        }
 		else
 		{
-			GUI.Box(R, "$" + Viz.PrepararNumeros(DatosPartida.PtsPerdedor));
-		}
-		
-	}
-	
-	void SetCartelGanador()
-	{
-		GUI.skin = GS_Ganador;
-		
-		R.width = GanadorEsc.x * Screen.width/100;
-		R.height = GanadorEsc.y * Screen.height/100;
-		R.x = GanadorPos.x * Screen.width/100;
-		R.y = GanadorPos.y * Screen.height/100;
-		
-		GUI.Box(R, "");
-	}
+            Scores[1].text = "$" + Viz.PrepararNumeros(DatosPartida.PtsPerdedor).ToString();
+        }
+
+    }
 	
 	public void DesaparecerGUI()
 	{
