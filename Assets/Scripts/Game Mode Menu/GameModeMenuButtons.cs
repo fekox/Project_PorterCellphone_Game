@@ -22,6 +22,8 @@ public enum GameMode
 
 public class GameModeMenuButtons : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
+
     public Dificult dificult = Dificult.None;
     public GameMode gameMode = GameMode.None;
 
@@ -32,6 +34,7 @@ public class GameModeMenuButtons : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 0;
         selectDificultText.text = "Select a dificulty:";
         selectGameModeText.text = "Select a game mode:";
     }
@@ -58,16 +61,19 @@ public class GameModeMenuButtons : MonoBehaviour
     {
         selectGameModeText.text = "Select a game mode: Singleplayer";
         gameMode = GameMode.Singleplayer;
+        gameManager.playerCount = 1;
     }
 
     public void Multiplayer() 
     {
         selectGameModeText.text = "Select a game mode: Multiplayer";
         gameMode = GameMode.Multiplayer;
+        gameManager.playerCount = 2;
     }
 
     public void PlayLevel() 
     {
+        Time.timeScale = 1;
         gameModeMenu.SetActive(false);
     }
 }

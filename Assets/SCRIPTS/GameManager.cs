@@ -37,13 +37,52 @@ public class GameManager : MonoBehaviour {
     //la pista de carreras
     public GameObject[] ObjsCarrera;
 
+    public int playerCount = 1;
+
+    [SerializeField] private GameObject player2UI;
+    [SerializeField] private GameObject tutorialScenePlayer2;
+    [SerializeField] private GameObject playerCameraCond2;
+    [SerializeField] private GameObject player2Body;
+    [SerializeField] private GameObject unloadScenePlayer2;
+
+    [SerializeField] private Camera tutorialCamCali1;
+    [SerializeField] private Camera playerCamCond1;
+    [SerializeField] private Camera unloadSceneCamDesc1;
+
     //--------------------------------------------------------//
 
     void Awake() {
         GameManager.Instancia = this;
     }
 
-    IEnumerator Start() {
+    IEnumerator Start() 
+    {
+        if(playerCount == 1) 
+        {
+            tutorialCamCali1.rect = new Rect(0f,0f, 1f, 1f);
+            playerCamCond1.rect = new Rect(0f, 0f, 1f, 1f);
+            unloadSceneCamDesc1.rect = new Rect(0f, 0f, 1f, 1f); 
+
+            player2UI.SetActive(false);
+            tutorialScenePlayer2.SetActive(false);
+            playerCameraCond2.SetActive(false);
+            player2Body.SetActive(false);
+            unloadScenePlayer2.SetActive(false);
+        }
+
+        if(playerCount == 2) 
+        {
+            tutorialCamCali1.rect = new Rect(0f, 0f, 0.5f, 1f);
+            playerCamCond1.rect = new Rect(0f, 0f, 0.5f, 1f);
+            unloadSceneCamDesc1.rect = new Rect(0f, 0f, 0.5f, 1f);
+
+            player2UI.SetActive(true);
+            tutorialScenePlayer2.SetActive(true);
+            playerCameraCond2.SetActive(true);
+            player2Body.SetActive(true);
+            unloadScenePlayer2.SetActive(true);
+        }
+
         yield return null;
         IniciarTutorial();
     }
@@ -66,7 +105,7 @@ public class GameManager : MonoBehaviour {
                     Player1.Seleccionado = true;
                 }
 
-                if (Input.GetKeyDown(KeyCode.UpArrow)) {
+                if (Input.GetKeyDown(KeyCode.UpArrow) || playerCount == 2) {
                     Player2.Seleccionado = true;
                 }
 
@@ -129,7 +168,7 @@ public class GameManager : MonoBehaviour {
     public void IniciarTutorial() {
         for (int i = 0; i < ObjsCalibracion1.Length; i++) {
             ObjsCalibracion1[i].SetActive(true);
-            ObjsCalibracion2[i].SetActive(true);
+            ObjsCalibracion2[i].SetActive(playerCount == 2 ? true : false);
         }
 
         for (int i = 0; i < ObjsCarrera.Length; i++) {
@@ -137,7 +176,11 @@ public class GameManager : MonoBehaviour {
         }
 
         Player1.CambiarATutorial();
-        Player2.CambiarATutorial();
+
+        if (playerCount == 2)
+        {
+            Player2.CambiarATutorial();
+        }
 
         TiempoDeJuegoText.transform.parent.gameObject.SetActive(false);
         ConteoInicio.gameObject.SetActive(false);
@@ -147,8 +190,11 @@ public class GameManager : MonoBehaviour {
         Player1.GetComponent<Frenado>().RestaurarVel();
         Player1.GetComponent<ControlDireccion>().Habilitado = true;
 
-        Player2.GetComponent<Frenado>().RestaurarVel();
-        Player2.GetComponent<ControlDireccion>().Habilitado = true;
+        if (playerCount == 2) 
+        {
+            Player2.GetComponent<Frenado>().RestaurarVel();
+            Player2.GetComponent<ControlDireccion>().Habilitado = true;
+        }
     }
 
     void FinalizarCarrera() {
@@ -179,10 +225,18 @@ public class GameManager : MonoBehaviour {
         }
 
         Player1.GetComponent<Frenado>().Frenar();
-        Player2.GetComponent<Frenado>().Frenar();
+
+        if (playerCount == 2) 
+        {
+            Player2.GetComponent<Frenado>().Frenar();
+        }
 
         Player1.ContrDesc.FinDelJuego();
-        Player2.ContrDesc.FinDelJuego();
+
+        if (playerCount == 2) 
+        {
+            Player2.ContrDesc.FinDelJuego();
+        }
     }
 
     //se encarga de posicionar la camara derecha para el jugador que esta a la derecha y viseversa
@@ -231,32 +285,59 @@ public class GameManager : MonoBehaviour {
 
 
         //posiciona los camiones dependiendo de que lado de la pantalla esten
-        if (Player1.LadoActual == Visualizacion.Lado.Izq) {
+        if (Player1.LadoActual == Visualizacion.Lado.Izq) 
+        {
             Player1.gameObject.transform.position = PosCamionesCarrera[0];
-            Player2.gameObject.transform.position = PosCamionesCarrera[1];
+
+            if (playerCount == 2) 
+            {
+                Player2.gameObject.transform.position = PosCamionesCarrera[1];
+            }
         }
-        else {
+        else 
+        {
             Player1.gameObject.transform.position = PosCamionesCarrera[1];
-            Player2.gameObject.transform.position = PosCamionesCarrera[0];
+
+            if (playerCount == 2) 
+            {
+                Player2.gameObject.transform.position = PosCamionesCarrera[0];
+            }
         }
 
         Player1.transform.forward = Vector3.forward;
         Player1.GetComponent<Frenado>().Frenar();
         Player1.CambiarAConduccion();
 
-        Player2.transform.forward = Vector3.forward;
-        Player2.GetComponent<Frenado>().Frenar();
-        Player2.CambiarAConduccion();
+        if (playerCount == 2) 
+        {
+            Player2.transform.forward = Vector3.forward;
+            Player2.GetComponent<Frenado>().Frenar();
+            Player2.CambiarAConduccion();
+        }
 
         //los deja andando
         Player1.GetComponent<Frenado>().RestaurarVel();
-        Player2.GetComponent<Frenado>().RestaurarVel();
+
+        if (playerCount == 2) 
+        {
+            Player2.GetComponent<Frenado>().RestaurarVel();
+        }
+
         //cancela la direccion
         Player1.GetComponent<ControlDireccion>().Habilitado = false;
-        Player2.GetComponent<ControlDireccion>().Habilitado = false;
+
+        if (playerCount == 2) 
+        {
+            Player2.GetComponent<ControlDireccion>().Habilitado = false;
+        }
+
         //les de direccion
         Player1.transform.forward = Vector3.forward;
-        Player2.transform.forward = Vector3.forward;
+
+        if (playerCount == 2) 
+        {
+            Player2.transform.forward = Vector3.forward;
+        }
 
         TiempoDeJuegoText.transform.parent.gameObject.SetActive(false);
         ConteoInicio.gameObject.SetActive(false);
@@ -267,7 +348,9 @@ public class GameManager : MonoBehaviour {
             Player1.FinTuto = true;
 
         }
-        if (playerID == 1) {
+
+        if (playerID == 1 || playerCount == 1) 
+        {
             Player2.FinTuto = true;
         }
 
