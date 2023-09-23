@@ -57,11 +57,17 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator Start() 
     {
-        if(playerCount == 1) 
+        yield return null;
+        IniciarTutorial();
+    }
+
+    void Update() 
+    {
+        if (playerCount == 1)
         {
-            tutorialCamCali1.rect = new Rect(0f,0f, 1f, 1f);
+            tutorialCamCali1.rect = new Rect(0f, 0f, 1f, 1f);
             playerCamCond1.rect = new Rect(0f, 0f, 1f, 1f);
-            unloadSceneCamDesc1.rect = new Rect(0f, 0f, 1f, 1f); 
+            unloadSceneCamDesc1.rect = new Rect(0f, 0f, 1f, 1f);
 
             player2UI.SetActive(false);
             tutorialScenePlayer2.SetActive(false);
@@ -70,7 +76,7 @@ public class GameManager : MonoBehaviour {
             unloadScenePlayer2.SetActive(false);
         }
 
-        if(playerCount == 2) 
+        if (playerCount == 2)
         {
             tutorialCamCali1.rect = new Rect(0f, 0f, 0.5f, 1f);
             playerCamCond1.rect = new Rect(0f, 0f, 0.5f, 1f);
@@ -83,11 +89,6 @@ public class GameManager : MonoBehaviour {
             unloadScenePlayer2.SetActive(true);
         }
 
-        yield return null;
-        IniciarTutorial();
-    }
-
-    void Update() {
         //REINICIAR
         if (Input.GetKey(KeyCode.Alpha0)) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

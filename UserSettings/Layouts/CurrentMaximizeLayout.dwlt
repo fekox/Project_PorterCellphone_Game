@@ -26,7 +26,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 15330
+  controlID: 16589
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_SerializedViewNames:
   - UnityEditor.DeviceSimulation.SimulatorWindow
   m_SerializedViewValues:
-  - C:\Users\facus\OneDrive\Escritorio\Moviles\TP1\Project_PorterCellphone_Game\Library\PlayModeViewStates\a40ec29be239e4943a762f7c48fb883a
+  - C:\Users\facus\OneDrive\Escritorio\Moviles\TP1\Project_PorterCellphone_Game\Library\PlayModeViewStates\316aae6f8f8b28d42b56479c0e71f0eb
   m_PlayModeViewName: GameView
   m_ShowGizmos: 0
   m_TargetDisplay: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 15331
+  controlID: 16561
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -434,9 +434,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 231.7537, y: 134.15286, z: 0}
+    m_Target: {x: -302.06342, y: 107.52426, z: 6036.0234}
     speed: 2
-    m_Value: {x: 231.7537, y: 134.15286, z: 0}
+    m_Value: {x: -302.06342, y: 107.52426, z: 6036.0234}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -483,13 +483,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    m_Target: {x: 0.57140803, y: 0.1445587, z: -0.10309451, w: 0.80124015}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0, w: 1}
+    m_Value: {x: 0.5714027, y: 0.14455736, z: -0.10309355, w: 0.8012327}
   m_Size:
-    m_Target: 250.67969
+    m_Target: 31.79954
     speed: 2
-    m_Value: 250.67969
+    m_Value: 31.79954
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -601,21 +601,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 28d8ffff72dcffff32fbffff0259000072760000
+      m_ExpandedIDs: b001fffff60bffffaa37ffff32fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: V de conos
+        m_OriginalName: V de conos
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -139836
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 7}
       m_SearchString: 
@@ -644,8 +644,8 @@ MonoBehaviour:
     y: 0
     width: 220
     height: 724
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 10}
   m_Panes:
   - {fileID: 10}
