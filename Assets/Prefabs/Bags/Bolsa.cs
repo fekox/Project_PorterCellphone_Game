@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Bolsa : MonoBehaviour
 {
+	public ObjectPool pool;
 	public Pallet.Valores Monto;
 	//public int IdPlayer = 0;
 	public string TagPlayer = "";
@@ -28,8 +29,10 @@ public class Bolsa : MonoBehaviour
 			TiempParts -= Time.deltaTime;
 			if(TiempParts <= 0)
 			{
-				GetComponent<Renderer>().enabled = true;
-				GetComponent<Collider>().enabled = true;
+				//GetComponent<Renderer>().enabled = true;
+				//GetComponent<Collider>().enabled = true;
+
+				pool.AddObjectsToPool(gameObject);
 			}
 		}
 		

@@ -3,7 +3,9 @@ using System.Collections;
 
 public class Obstaculo : MonoBehaviour 
 {
-	public float ReduccionVel = 0;
+	public ObjectPool pool;
+
+    public float ReduccionVel = 0;
 	public float TiempEmpDesapa = 1;
 	float Tempo1 = 0;
 	public float TiempDesapareciendo = 1;
@@ -25,6 +27,7 @@ public class Obstaculo : MonoBehaviour
 				Desapareciendo = true;
 				GetComponent<Rigidbody>().useGravity = false;
 				GetComponent<Collider>().enabled = false;
+				pool.AddObjectsToPool(gameObject);
 			}
 		}
 		
