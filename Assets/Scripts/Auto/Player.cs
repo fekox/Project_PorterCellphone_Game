@@ -26,9 +26,15 @@ public class Player : MonoBehaviour
 
 	public Visualizacion.Lado LadoActual => MiVisualizacion.LadoAct;
 
-	//------------------------------------------------------------------//
 
-	void Start () 
+	[Header("Joystick")]
+	[SerializeField] private GameManager gameManager;
+
+	public GameObject playerJoystick;
+
+    //------------------------------------------------------------------//
+
+    void Start () 
 	{
 		for(int i = 0; i< Bolasas.Length;i++)
 			Bolasas[i] = null;
@@ -86,19 +92,34 @@ public class Player : MonoBehaviour
 	
 	public void CambiarATutorial()
 	{
+		if(gameManager.isPlayinOnMovile == true) 
+		{
+			playerJoystick.SetActive(false);
+        }
+
 		EstAct = Player.Estados.EnTutorial;
 		MiVisualizacion.CambiarATutorial();
 	}
 	
 	public void CambiarAConduccion()
 	{
-		EstAct = Player.Estados.EnConduccion;
+		if (gameManager.isPlayinOnMovile == true)
+		{
+			playerJoystick.SetActive(true);
+		}
+
+        EstAct = Player.Estados.EnConduccion;
 		MiVisualizacion.CambiarAConduccion();
 	}
 	
 	public void CambiarADescarga()
 	{
-		EstAct = Player.Estados.EnDescarga;
+		if (gameManager.isPlayinOnMovile == true)
+		{
+			playerJoystick.SetActive(false);
+		}
+
+        EstAct = Player.Estados.EnDescarga;
 		MiVisualizacion.CambiarADescarga();
 	}
 	

@@ -37,6 +37,11 @@ public class GameManager : MonoBehaviour {
     //la pista de carreras
     public GameObject[] ObjsCarrera;
 
+    [Header("Movile buttons")]
+    public bool isPlayinOnMovile = false;
+
+    [Header("Active Player2")]
+
     public int playerCount = 1;
 
     [SerializeField] private GameObject player2UI;

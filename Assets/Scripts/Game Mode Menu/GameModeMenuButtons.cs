@@ -5,21 +5,6 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public enum Dificult
-{
-    None,
-    Easy,
-    Normal,
-    Hard
-}
-
-public enum GameMode 
-{
-    None,
-    Singleplayer,
-    Multiplayer
-}
-
 public class GameModeMenuButtons : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
@@ -29,9 +14,15 @@ public class GameModeMenuButtons : MonoBehaviour
     public TextMeshProUGUI selectDificultText;
     public TextMeshProUGUI selectGameModeText;
 
+    [Header("Dificults")]
+
     [SerializeField] private GameObject dificultEasy;
     [SerializeField] private GameObject dificultNormal;
     [SerializeField] private GameObject dificultHard;
+
+    [Header("Joystick")]
+
+    [SerializeField] private GameObject joystickPlayer2;
 
     private void Start()
     {
@@ -76,12 +67,22 @@ public class GameModeMenuButtons : MonoBehaviour
     {
         selectGameModeText.text = "Select a game mode: Singleplayer";
         gameManager.playerCount = 1;
+
+        if(gameManager.isPlayinOnMovile == true) 
+        {
+            joystickPlayer2.SetActive(false);
+        }
     }
 
     public void Multiplayer() 
     {
         selectGameModeText.text = "Select a game mode: Multiplayer";
         gameManager.playerCount = 2;
+
+        if (gameManager.isPlayinOnMovile == true)
+        {
+            joystickPlayer2.SetActive(true);
+        }
     }
 
     public void PlayLevel() 
