@@ -2,86 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour
+public class InputManager
 {
-    public static InputManager instance;
+    private float giro;
+    private Dictionary<string, float> axisValues = new Dictionary<string, float>();
+    private static InputManager instance;
 
-    public float horizontalInput { get; set; }
-    public float verticalInput { get; set; }
-
-    private bool touchInputActive;
-    private Vector2 touchStartPosition;
-    private Vector2 touchDelta;
-
-    private void Awake()
+    public static InputManager Instance
     {
-        if (instance == null)
+        get
         {
-            instance = this;
-        }
+            if (instance == null)
+                instance = new InputManager();
 
-        else
-        {
-            Destroy(gameObject);
+            return instance;
         }
     }
 
-    private void Update()
+    public void SetAxis(string inputName, float value)
     {
-        UpdateInput();
+        if (!axisValues.ContainsKey(inputName))
+            axisValues.Add(inputName, value);
+
+        axisValues[inputName] = value;
     }
 
-    private void UpdateInput()
+    public float GetOrAddAxis(string inputName)
     {
+        if (!axisValues.ContainsKey(inputName))
+            axisValues.Add(inputName, 0f);
+        return axisValues[inputName];
+    }
 
+    public float GetAxis(string inputName)
+    {
 #if UNITY_EDITOR
-
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-
+        return GetOrAddAxis(inputName) + Input.GetAxis(inputName);
 #endif
-
 #if UNITY_ANDROID || UNITY_IOS
-
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-
-            switch (touch.phase)
-            {
-                case TouchPhase.Began:
-                    touchInputActive = true;
-                    touchStartPosition = touch.position;
-                    break;
-
-                case TouchPhase.Moved:
-                    touchDelta = touch.position - touchStartPosition;
-                    break;
-
-                case TouchPhase.Ended:
-                    touchInputActive = false;
-                    break;
-            }
-        }
-
-        else
-        {
-            touchInputActive = false;
-        }
+        return GetOrAddAxis(inputName) + Input.GetAxis(inputName);
 #endif
-
-    }
-
-    public Vector2 GetTouchDelta()
-    {
-        if (touchInputActive)
-        {
-            return touchDelta;
-        }
-
-        else
-        {
-            return Vector2.zero;
-        }
+#if UNITY_STANDALONE
+        Input.GetAxis(inputName);
+#endif
     }
 }

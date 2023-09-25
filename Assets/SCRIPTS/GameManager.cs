@@ -89,16 +89,6 @@ public class GameManager : MonoBehaviour {
             unloadScenePlayer2.SetActive(true);
         }
 
-        //REINICIAR
-        if (Input.GetKey(KeyCode.Alpha0)) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-
-        //CIERRA LA APLICACION
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            Application.Quit();
-        }
-
         switch (EstAct) {
             case EstadoJuego.Calibrando:
 
