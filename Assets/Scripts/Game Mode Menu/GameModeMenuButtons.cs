@@ -20,9 +20,14 @@ public class GameModeMenuButtons : MonoBehaviour
     [SerializeField] private GameObject dificultNormal;
     [SerializeField] private GameObject dificultHard;
 
-    [Header("Joystick")]
+    [Header("Joysticks Player2")]
 
     [SerializeField] private GameObject joystickPlayer2;
+
+    [Header("Buttons Player2")]
+
+    [SerializeField] private GameObject tutorialButtonPlayer2;
+    [SerializeField] private GameObject unloadButtonPlayer2;
 
     private void Start()
     {
@@ -71,6 +76,8 @@ public class GameModeMenuButtons : MonoBehaviour
         if(gameManager.isPlayinOnMovile == true) 
         {
             joystickPlayer2.SetActive(false);
+            tutorialButtonPlayer2.SetActive(false);
+            unloadButtonPlayer2.SetActive(false);
         }
     }
 
@@ -82,6 +89,7 @@ public class GameModeMenuButtons : MonoBehaviour
         if (gameManager.isPlayinOnMovile == true)
         {
             joystickPlayer2.SetActive(true);
+            tutorialButtonPlayer2.SetActive(true);
         }
     }
 

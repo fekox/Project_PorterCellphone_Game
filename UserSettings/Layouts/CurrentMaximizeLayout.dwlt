@@ -26,7 +26,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 85
+  controlID: 34337
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -57,10 +57,8 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
-  m_SerializedViewNames:
-  - UnityEditor.DeviceSimulation.SimulatorWindow
-  m_SerializedViewValues:
-  - C:\Users\facus\OneDrive\Escritorio\Moviles\TP1\Project_PorterCellphone_Game\Library\PlayModeViewStates\4833253122734d04299ad12950d1e435
+  m_SerializedViewNames: []
+  m_SerializedViewValues: []
   m_PlayModeViewName: GameView
   m_ShowGizmos: 0
   m_TargetDisplay: 0
@@ -147,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 73
+  controlID: 34218
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,8 +165,8 @@ MonoBehaviour:
     y: 0
     width: 726
     height: 371.6
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 5}
   m_Panes:
   - {fileID: 5}
@@ -424,7 +422,7 @@ MonoBehaviour:
       index: 12
       layout: 4
     m_OverlaysVisible: 1
-  m_WindowGUID: 31aef467c5daf6840b5306b88a6befd9
+  m_WindowGUID: 158d42b8c4b082d46bd76113bc55795d
   m_Gizmos: 1
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
@@ -434,9 +432,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -302.06342, y: 107.52426, z: 6036.0234}
+    m_Target: {x: -20, y: 11.158495, z: -4983.02}
     speed: 2
-    m_Value: {x: -302.06342, y: 107.52426, z: 6036.0234}
+    m_Value: {x: -20, y: 11.158495, z: -4983.02}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -478,18 +476,18 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 1, y: 1}
+      m_Size: {x: 0, y: 0}
     m_ShowGrid: 1
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.57140803, y: 0.1445587, z: -0.10309451, w: 0.80124015}
+    m_Target: {x: -0.08719593, y: 0.00806618, z: -0.0007059443, w: -0.99615943}
     speed: 2
-    m_Value: {x: 0.5714027, y: 0.14455736, z: -0.10309355, w: 0.8012327}
+    m_Value: {x: -0.087195836, y: 0.008066172, z: -0.00070594356, w: -0.99615836}
   m_Size:
-    m_Target: 31.79954
+    m_Target: 11.180342
     speed: 2
-    m_Value: 31.79954
+    m_Value: 11.180342
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -533,8 +531,8 @@ MonoBehaviour:
     y: 371.6
     width: 726
     height: 352.4
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -559,8 +557,8 @@ MonoBehaviour:
     y: 0
     width: 246.40002
     height: 724
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 8}
   m_Panes:
   - {fileID: 8}
@@ -601,7 +599,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: c29affff32fbffff
+      m_ExpandedIDs: c4b1feffda0effffa810fffff27b1100fc7b110060a51100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -624,7 +622,7 @@ MonoBehaviour:
     m_LockTracker:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
-  m_WindowGUID: 57de92b3e2873c345aaa505c50df8be2
+  m_WindowGUID: b60cbd76bd9aa2147970224169b518f9
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -692,23 +690,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/EscenaDescarga
     m_Globs: []
     m_OriginalText: 
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/EscenaDescarga
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\facus\OneDrive\Escritorio\Moviles\TP1\Project_PorterCellphone_Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 5eb40000
-    m_LastClickedID: 46174
-    m_ExpandedIDs: 0000000016b4000018b400001ab400001cb4000000ca9a3b
+    m_SelectedIDs: 2eb40000
+    m_LastClickedID: 46126
+    m_ExpandedIDs: 00000000b4b30000b6b30000b8b30000bab30000bcb3000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -736,7 +734,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000016b4000018b400001ab400001cb40000
+    m_ExpandedIDs: 00000000b4b30000b6b30000b8b30000bab30000bcb3000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -761,9 +759,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 6cb40000
-    m_LastClickedInstanceID: 46188
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: a2b0feff
+    m_LastClickedInstanceID: -85854
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -780,7 +778,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 9}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -788,7 +786,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 202}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 115
@@ -811,8 +809,8 @@ MonoBehaviour:
     y: 0
     width: 343.59998
     height: 724
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -854,7 +852,7 @@ MonoBehaviour:
     m_CachedPref: -160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 46188
+  m_LastInspectedObjectInstanceID: -85854
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0

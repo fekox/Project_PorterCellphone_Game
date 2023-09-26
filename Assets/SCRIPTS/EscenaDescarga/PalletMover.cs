@@ -42,15 +42,15 @@ public class PalletMover : ManejoPallets {
         }
     }
 
-    void PrimerPaso() {
+    public void PrimerPaso() {
         Desde.Dar(this);
         segundoCompleto = false;
     }
-    void SegundoPaso() {
+    public void SegundoPaso() {
         base.Pallets[0].transform.position = transform.position;
         segundoCompleto = true;
     }
-    void TercerPaso() {
+    public void TercerPaso() {
         Dar(Hasta);
         segundoCompleto = false;
     }

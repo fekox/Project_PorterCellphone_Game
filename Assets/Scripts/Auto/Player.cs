@@ -26,11 +26,15 @@ public class Player : MonoBehaviour
 
 	public Visualizacion.Lado LadoActual => MiVisualizacion.LadoAct;
 
-
 	[Header("Joystick")]
 	[SerializeField] private GameManager gameManager;
 
 	public GameObject playerJoystick;
+
+    [Header("Buttons Player")]
+
+    public GameObject tutorialButtons;
+    public GameObject UnloadButtons;
 
     //------------------------------------------------------------------//
 
@@ -95,6 +99,7 @@ public class Player : MonoBehaviour
 		if(gameManager.isPlayinOnMovile == true) 
 		{
 			playerJoystick.SetActive(false);
+			tutorialButtons.SetActive(true);
         }
 
 		EstAct = Player.Estados.EnTutorial;
@@ -106,7 +111,9 @@ public class Player : MonoBehaviour
 		if (gameManager.isPlayinOnMovile == true)
 		{
 			playerJoystick.SetActive(true);
-		}
+            tutorialButtons.SetActive(false);
+			UnloadButtons.SetActive(false);
+        }
 
         EstAct = Player.Estados.EnConduccion;
 		MiVisualizacion.CambiarAConduccion();
@@ -117,7 +124,8 @@ public class Player : MonoBehaviour
 		if (gameManager.isPlayinOnMovile == true)
 		{
 			playerJoystick.SetActive(false);
-		}
+            UnloadButtons.SetActive(true);
+        }
 
         EstAct = Player.Estados.EnDescarga;
 		MiVisualizacion.CambiarADescarga();
