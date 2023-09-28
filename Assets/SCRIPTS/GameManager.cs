@@ -70,28 +70,12 @@ public class GameManager : MonoBehaviour {
     {
         if (playerCount == 1)
         {
-            tutorialCamCali1.rect = new Rect(0f, 0f, 1f, 1f);
-            playerCamCond1.rect = new Rect(0f, 0f, 1f, 1f);
-            unloadSceneCamDesc1.rect = new Rect(0f, 0f, 1f, 1f);
-
-            player2UI.SetActive(false);
-            tutorialScenePlayer2.SetActive(false);
-            playerCameraCond2.SetActive(false);
-            player2Body.SetActive(false);
-            unloadScenePlayer2.SetActive(false);
+            InitSingleplayer();
         }
 
         if (playerCount == 2)
         {
-            tutorialCamCali1.rect = new Rect(0f, 0f, 0.5f, 1f);
-            playerCamCond1.rect = new Rect(0f, 0f, 0.5f, 1f);
-            unloadSceneCamDesc1.rect = new Rect(0f, 0f, 0.5f, 1f);
-
-            player2UI.SetActive(true);
-            tutorialScenePlayer2.SetActive(true);
-            playerCameraCond2.SetActive(true);
-            player2Body.SetActive(true);
-            unloadScenePlayer2.SetActive(true);
+            InitMultiplayer();
         }
 
         switch (EstAct) {
@@ -160,6 +144,32 @@ public class GameManager : MonoBehaviour {
     }
 
     //----------------------------------------------------------//
+
+    private void InitSingleplayer() 
+    {
+        tutorialCamCali1.rect = new Rect(0f, 0f, 1f, 1f);
+        playerCamCond1.rect = new Rect(0f, 0f, 1f, 1f);
+        unloadSceneCamDesc1.rect = new Rect(0f, 0f, 1f, 1f);
+
+        player2UI.SetActive(false);
+        tutorialScenePlayer2.SetActive(false);
+        playerCameraCond2.SetActive(false);
+        player2Body.SetActive(false);
+        unloadScenePlayer2.SetActive(false);
+    }
+
+    private void InitMultiplayer() 
+    {
+        tutorialCamCali1.rect = new Rect(0f, 0f, 0.5f, 1f);
+        playerCamCond1.rect = new Rect(0f, 0f, 0.5f, 1f);
+        unloadSceneCamDesc1.rect = new Rect(0f, 0f, 0.5f, 1f);
+
+        player2UI.SetActive(true);
+        tutorialScenePlayer2.SetActive(true);
+        playerCameraCond2.SetActive(true);
+        player2Body.SetActive(true);
+        unloadScenePlayer2.SetActive(true);
+    }
 
     public void IniciarTutorial() {
         for (int i = 0; i < ObjsCalibracion1.Length; i++) {
@@ -234,28 +244,6 @@ public class GameManager : MonoBehaviour {
             Player2.ContrDesc.FinDelJuego();
         }
     }
-
-    //se encarga de posicionar la camara derecha para el jugador que esta a la derecha y viseversa
-    //void SetPosicion(PlayerInfo pjInf) {
-    //    pjInf.PJ.GetComponent<Visualizacion>().SetLado(pjInf.LadoAct);
-    //    //en este momento, solo la primera vez, deberia setear la otra camara asi no se superponen
-    //    pjInf.PJ.ContrCalib.IniciarTesteo();
-    //
-    //
-    //    if (pjInf.PJ == Player1) {
-    //        if (pjInf.LadoAct == Visualizacion.Lado.Izq)
-    //            Player2.GetComponent<Visualizacion>().SetLado(Visualizacion.Lado.Der);
-    //        else
-    //            Player2.GetComponent<Visualizacion>().SetLado(Visualizacion.Lado.Izq);
-    //    }
-    //    else {
-    //        if (pjInf.LadoAct == Visualizacion.Lado.Izq)
-    //            Player1.GetComponent<Visualizacion>().SetLado(Visualizacion.Lado.Der);
-    //        else
-    //            Player1.GetComponent<Visualizacion>().SetLado(Visualizacion.Lado.Izq);
-    //    }
-    //
-    //}
 
     //cambia a modo de carrera
     void CambiarACarrera() {
@@ -353,5 +341,4 @@ public class GameManager : MonoBehaviour {
         if (Player1.FinTuto && Player2.FinTuto)
             CambiarACarrera();
     }
-
 }
