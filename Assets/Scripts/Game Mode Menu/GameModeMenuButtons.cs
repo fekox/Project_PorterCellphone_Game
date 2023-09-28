@@ -88,7 +88,6 @@ public class GameModeMenuButtons : MonoBehaviour
 
         if (gameManager.isPlayinOnMovile == true)
         {
-            joystickPlayer2.SetActive(true);
             tutorialButtonPlayer2.SetActive(true);
         }
     }
