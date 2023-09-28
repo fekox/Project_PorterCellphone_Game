@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class GameModeMenuButtons : MonoBehaviour
 {
-    [SerializeField] private GameManager gameManager;
+    [Header("Mediator")]
+
+    public Mediator mediator;
 
     public GameObject gameModeMenu;
 
@@ -71,9 +73,9 @@ public class GameModeMenuButtons : MonoBehaviour
     public void SinglePlayer() 
     {
         selectGameModeText.text = "Select a game mode: Singleplayer";
-        gameManager.playerCount = 1;
+        mediator.gameManager.playerCount = 1;
 
-        if(gameManager.isPlayinOnMovile == true) 
+        if(mediator.gameManager.isPlayinOnMovile == true) 
         {
             joystickPlayer2.SetActive(false);
             tutorialButtonPlayer2.SetActive(false);
@@ -84,9 +86,9 @@ public class GameModeMenuButtons : MonoBehaviour
     public void Multiplayer() 
     {
         selectGameModeText.text = "Select a game mode: Multiplayer";
-        gameManager.playerCount = 2;
+        mediator.gameManager.playerCount = 2;
 
-        if (gameManager.isPlayinOnMovile == true)
+        if (mediator.gameManager.isPlayinOnMovile == true)
         {
             tutorialButtonPlayer2.SetActive(true);
         }

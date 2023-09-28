@@ -11,8 +11,11 @@ public class Visualizacion : MonoBehaviour
 {
 	public enum Lado{Izq, Der}
 	public Lado LadoAct;
-	
-	ControlDireccion Direccion;
+
+	[Header("Mediator")]
+
+	public Mediator mediator;
+
 	Player Pj;
 
     public GameObject uiRoot;
@@ -57,7 +60,7 @@ public class Visualizacion : MonoBehaviour
     // Use this for initialization
     void Start () 
 	{
-		Direccion = GetComponent<ControlDireccion>();
+		mediator.controlDireccion = GetComponent<ControlDireccion>();
 		Pj = GetComponent<Player>();
     }
 	
@@ -197,7 +200,7 @@ public class Visualizacion : MonoBehaviour
 	
 	void SetVolante()
 	{
-		float angulo = - 45 * Direccion.GetGiro();
+		float angulo = - 45 * mediator.controlDireccion.GetGiro();
         Vector3 rot = volante.localEulerAngles;
         rot.z = angulo;
         volante.localEulerAngles = rot;

@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 
 using System.Collections;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour 
+{
     public static GameManager Instancia;
 
     public float TiempoDeJuego = 60;

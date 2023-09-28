@@ -3,7 +3,6 @@ using System.Collections;
 
 public class MousePos : MonoBehaviour 
 {
-
 	public enum AxisRelation{Horizontal, Vertical}
 
     static public float RelCalibration()

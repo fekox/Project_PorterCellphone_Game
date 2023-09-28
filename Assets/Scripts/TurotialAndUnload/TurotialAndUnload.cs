@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class TurotialAndUnload : MonoBehaviour
 {
-    public GameManager gameManager;
+    public Mediator mediator;
 
     private void Start()
     {
-        gameManager.Player1.Seleccionado = true;
+        mediator.gameManager.Player1.Seleccionado = true;
     }
 }
