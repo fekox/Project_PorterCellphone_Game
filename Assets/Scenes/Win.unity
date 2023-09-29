@@ -447,7 +447,7 @@ MonoBehaviour:
   Scores:
   - {fileID: 47247920}
   - {fileID: 284620066}
-  TiempEspReiniciar: 10
+  TiempEspReiniciar: 5
   TiempParpadeo: 0.3
   ActivadoAnims: 0
 --- !u!1 &47247918
