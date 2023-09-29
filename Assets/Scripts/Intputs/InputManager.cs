@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class InputManager
 {
-    private float giro;
     private Dictionary<string, float> axisValues = new Dictionary<string, float>();
     private static InputManager instance;
 
@@ -38,12 +37,12 @@ public class InputManager
     {
 #if UNITY_EDITOR
         return GetOrAddAxis(inputName) + Input.GetAxis(inputName);
-#endif
-#if UNITY_ANDROID || UNITY_IOS
+
+#elif UNITY_ANDROID || UNITY_IOS
         return GetOrAddAxis(inputName) + Input.GetAxis(inputName);
-#endif
-#if UNITY_STANDALONE
-        Input.GetAxis(inputName);
+
+#elif UNITY_STANDALONE                 
+        return Input.GetAxis(inputName);
 #endif
     }
 }

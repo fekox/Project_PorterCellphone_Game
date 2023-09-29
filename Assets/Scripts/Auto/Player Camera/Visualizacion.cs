@@ -14,7 +14,7 @@ public class Visualizacion : MonoBehaviour
 
 	[Header("Mediator")]
 
-	public Mediator mediator;
+	public ControlDireccion controlDireccion;
 
 	Player Pj;
 
@@ -60,7 +60,7 @@ public class Visualizacion : MonoBehaviour
     // Use this for initialization
     void Start () 
 	{
-		mediator.controlDireccion = GetComponent<ControlDireccion>();
+		controlDireccion = GetComponent<ControlDireccion>();
 		Pj = GetComponent<Player>();
     }
 	
@@ -200,7 +200,7 @@ public class Visualizacion : MonoBehaviour
 	
 	void SetVolante()
 	{
-		float angulo = - 45 * mediator.controlDireccion.GetGiro();
+		float angulo = - 45 * controlDireccion.GetGiro();
         Vector3 rot = volante.localEulerAngles;
         rot.z = angulo;
         volante.localEulerAngles = rot;

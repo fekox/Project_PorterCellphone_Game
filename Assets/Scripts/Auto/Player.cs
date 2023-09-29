@@ -27,7 +27,8 @@ public class Player : MonoBehaviour
 	public Visualizacion.Lado LadoActual => MiVisualizacion.LadoAct;
 
 	[Header("Joystick")]
-	[SerializeField] private GameManager gameManager;
+	
+	[SerializeField] private Mediator mediator;
 
 	public GameObject playerJoystick;
 
@@ -96,7 +97,7 @@ public class Player : MonoBehaviour
 	
 	public void CambiarATutorial()
 	{
-		if(gameManager.isPlayinOnMovile == true) 
+		if(mediator.gameManager.isPlayinOnMovile == true) 
 		{
 			playerJoystick.SetActive(false);
 			tutorialButtons.SetActive(true);
@@ -108,7 +109,7 @@ public class Player : MonoBehaviour
 	
 	public void CambiarAConduccion()
 	{
-		if (gameManager.isPlayinOnMovile == true)
+		if (mediator.gameManager.isPlayinOnMovile == true)
 		{
 			playerJoystick.SetActive(true);
             tutorialButtons.SetActive(false);
@@ -121,7 +122,7 @@ public class Player : MonoBehaviour
 	
 	public void CambiarADescarga()
 	{
-		if (gameManager.isPlayinOnMovile == true)
+		if (mediator.gameManager.isPlayinOnMovile == true)
 		{
 			playerJoystick.SetActive(false);
             UnloadButtons.SetActive(true);
