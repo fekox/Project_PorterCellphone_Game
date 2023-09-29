@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public enum EstadoJuego { Calibrando, Jugando, Finalizado }
     public EstadoJuego EstAct = EstadoJuego.Calibrando;
 
+    [Header("Mediator")]
+
     public Player Player1;
     public Player Player2;
 

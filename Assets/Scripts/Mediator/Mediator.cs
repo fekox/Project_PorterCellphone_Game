@@ -8,8 +8,15 @@ public class Mediator : MonoBehaviour
 
     public GameManager gameManager;
 
-    [Header("Control Direction")]
+    [Header("Controll Direction")]
 
     public ControlDireccion controlDireccion;
 
+    [Header("Player")]
+
+    public Player player;
+
+    [Header("PlayerID")]
+
+    public int playerID;
 }

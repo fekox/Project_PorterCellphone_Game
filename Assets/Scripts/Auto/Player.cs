@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour 
 {
-	public int Dinero = 0;
+
+	[Header("Mediator")]
+    [SerializeField] private Mediator mediator;
+
+    public int Dinero = 0;
 	public int IdPlayer = 0;
 	
 	public Bolsa[] Bolasas;
@@ -27,8 +31,6 @@ public class Player : MonoBehaviour
 	public Visualizacion.Lado LadoActual => MiVisualizacion.LadoAct;
 
 	[Header("Joystick")]
-	
-	[SerializeField] private Mediator mediator;
 
 	public GameObject playerJoystick;
 

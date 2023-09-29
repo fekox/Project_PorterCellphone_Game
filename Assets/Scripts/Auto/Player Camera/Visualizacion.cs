@@ -14,9 +14,7 @@ public class Visualizacion : MonoBehaviour
 
 	[Header("Mediator")]
 
-	public ControlDireccion controlDireccion;
-
-	Player Pj;
+	public Mediator mediator;
 
     public GameObject uiRoot;
     private EnableInPlayerState[] enableInPlayerStates;
@@ -60,14 +58,14 @@ public class Visualizacion : MonoBehaviour
     // Use this for initialization
     void Start () 
 	{
-		controlDireccion = GetComponent<ControlDireccion>();
-		Pj = GetComponent<Player>();
+		mediator.controlDireccion = GetComponent<ControlDireccion>();
+		mediator.player = GetComponent<Player>();
     }
 	
 	// Update is called once per frame
 	void Update () 
 	{
-        switch (Pj.EstAct) {
+        switch (mediator.player.EstAct) {
 
             case Player.Estados.EnConduccion:
                 //inventario
@@ -101,7 +99,7 @@ public class Visualizacion : MonoBehaviour
 		CamConduccion.enabled = false;
 		CamDescarga.enabled = false;
 
-        Array.ForEach(enableInPlayerStates, e => e.SetPlayerState(Pj.EstAct));
+        Array.ForEach(enableInPlayerStates, e => e.SetPlayerState(mediator.player.EstAct));
     }
 	
 	public void CambiarAConduccion()
@@ -110,7 +108,7 @@ public class Visualizacion : MonoBehaviour
 		CamConduccion.enabled = true;
 		CamDescarga.enabled = false;
 
-        Array.ForEach(enableInPlayerStates, e => e.SetPlayerState(Pj.EstAct));
+        Array.ForEach(enableInPlayerStates, e => e.SetPlayerState(mediator.player.EstAct));
     }
 	
 	public void CambiarADescarga()
@@ -119,7 +117,7 @@ public class Visualizacion : MonoBehaviour
 		CamConduccion.enabled = false;
 		CamDescarga.enabled = true;
 
-        Array.ForEach(enableInPlayerStates, e => e.SetPlayerState(Pj.EstAct));
+        Array.ForEach(enableInPlayerStates, e => e.SetPlayerState(mediator.player.EstAct));
     }
 	
 	//---------//
@@ -152,17 +150,17 @@ public class Visualizacion : MonoBehaviour
 	
 	void SetBonus()
 	{
-		if(Pj.ContrDesc.PEnMov != null)
+		if(mediator.player.ContrDesc.PEnMov != null)
 		{
             BonusRoot.SetActive(true);
 
             //el fondo
-			float bonus = Pj.ContrDesc.Bonus;
+			float bonus = mediator.player.ContrDesc.Bonus;
 			float max = (float)(int)Pallet.Valores.Valor1;
 			float t = bonus / max;
             BonusFill.fillAmount = t;
             //la bolsa
-            BonusText.text = "$" + Pj.ContrDesc.Bonus.ToString("0");
+            BonusText.text = "$" + mediator.player.ContrDesc.Bonus.ToString("0");
         }
         else {
             BonusRoot.SetActive(false);
@@ -171,12 +169,12 @@ public class Visualizacion : MonoBehaviour
 	
 	void SetDinero()
 	{
-        Dinero.text = PrepararNumeros(Pj.Dinero);
+        Dinero.text = PrepararNumeros(mediator.player.Dinero);
     }
 	
 	void SetTuto()
 	{
-		switch(Pj.ContrCalib.EstAct)
+		switch(mediator.player.ContrCalib.EstAct)
 		{
 		case ContrCalibracion.Estados.Calibrando:
                 TutoCalibrando.SetActive(true);
@@ -200,7 +198,7 @@ public class Visualizacion : MonoBehaviour
 	
 	void SetVolante()
 	{
-		float angulo = - 45 * controlDireccion.GetGiro();
+		float angulo = - 45 * mediator.controlDireccion.GetGiro();
         Vector3 rot = volante.localEulerAngles;
         rot.z = angulo;
         volante.localEulerAngles = rot;
@@ -211,7 +209,7 @@ public class Visualizacion : MonoBehaviour
 		int contador = 0;
 		for(int i = 0; i < 3; i++)
 		{
-			if(Pj.Bolasas[i]!=null)
+			if(mediator.player.Bolasas[i]!=null)
 				contador++;
 		}
 

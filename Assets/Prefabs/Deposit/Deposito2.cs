@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Deposito2 : MonoBehaviour 
 {
-	
 	Player PjActual;
 	public string PlayerTag = "Player";
 	public bool Vacio = true;

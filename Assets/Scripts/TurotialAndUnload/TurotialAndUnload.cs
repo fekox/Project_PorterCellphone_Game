@@ -8,6 +8,6 @@ public class TurotialAndUnload : MonoBehaviour
 
     private void Start()
     {
-        mediator.gameManager.Player1.Seleccionado = true;
+        mediator.player.Seleccionado = true;
     }
 }

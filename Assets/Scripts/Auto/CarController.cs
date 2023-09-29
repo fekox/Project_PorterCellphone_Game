@@ -10,9 +10,6 @@ public class CarController : MonoBehaviour {
     public float maxTurn = 20f;
     float giro = 0f;
     float acel = 1f;
-
-    public int playerID;
-
 	
 	// Update is called once per frame
 	void FixedUpdate () {

@@ -10,8 +10,11 @@ public class ControladorDeDescarga : MonoBehaviour
 	Deposito2 Dep;
 	
 	public GameObject[] Componentes;//todos los componentes que debe activar en esta escena
-	
-	public Player Pj;//jugador
+
+	[Header("Mediator")]
+
+	public Mediator mediator;
+
 	MeshCollider CollCamion;
 	
 	public Pallet PEnMov = null;
@@ -49,8 +52,8 @@ public class ControladorDeDescarga : MonoBehaviour
 			Componentes[i].SetActive(false);
 		}
 		
-		CollCamion = Pj.GetComponentInChildren<MeshCollider>();
-		Pj.SetContrDesc(this);
+		CollCamion = mediator.player.GetComponentInChildren<MeshCollider>();
+        mediator.player.SetContrDesc(this);
 		if(ObjAnimado != null)
 			ObjAnimado.ContrDesc = this;
 	}
@@ -90,18 +93,18 @@ public class ControladorDeDescarga : MonoBehaviour
 		
 			
 		CollCamion.enabled = false;
-		Pj.CambiarADescarga();
+        mediator.player.CambiarADescarga();
 		
 		
 		GameObject go;
 		//asigna los pallets a las estanterias
-		for(int i = 0; i < Pj.Bolasas.Length; i++)
+		for(int i = 0; i < mediator.player.Bolasas.Length; i++)
 		{
-			if(Pj.Bolasas[i] != null)
+			if (mediator.player.Bolasas[i] != null)
 			{
 				Contador++;
 				
-				switch(Pj.Bolasas[i].Monto)
+				switch (mediator.player.Bolasas[i].Monto)
 				{
 				case Pallet.Valores.Valor1:
 					go = (GameObject) Instantiate(Pallet1);
@@ -130,7 +133,7 @@ public class ControladorDeDescarga : MonoBehaviour
 	{
 		PEnMov = p;
 		TempoBonus = p.Tiempo;
-		Pj.SacarBolasa();
+        mediator.player.SacarBolasa();
 		//inicia el contador de tiempo para el bonus
 	}
 	
@@ -142,8 +145,8 @@ public class ControladorDeDescarga : MonoBehaviour
 		//termina la descarga
 		PEnMov = null;
 		Contador--;
-		
-		Pj.Dinero += (int)Bonus;
+
+        mediator.player.Dinero += (int)Bonus;
 		
 		if(Contador <= 0)
 		{
@@ -191,8 +194,8 @@ public class ControladorDeDescarga : MonoBehaviour
 		CamaraConduccion.SetActive(true);
 		
 		CollCamion.enabled = true;
-		
-		Pj.CambiarAConduccion();
+
+        mediator.player.CambiarAConduccion();
 		
 		Dep.Soltar();
 		

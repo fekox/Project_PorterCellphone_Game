@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ControlDireccion : MonoBehaviour 
 {
+    [Header("Mediator")]
+
+    public Mediator mediator;
+
     [Header("Input")]
 
     public static ControlDireccion instance;
-
-    public int playerID;
 
 	float Giro = 0;
 	
@@ -32,7 +34,7 @@ public class ControlDireccion : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-        Giro = InputManager.Instance.GetAxis($"Horizontal{playerID}");
+        Giro = InputManager.Instance.GetAxis($"Horizontal{mediator.playerID}");
 
         carController.SetGiro(Giro);
     }
